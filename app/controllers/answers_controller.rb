@@ -4,10 +4,10 @@ class AnswersController < ApplicationController
     @answers = Answer.all
   end
 
-  def create
+  def new
   end
 
-  def new
+  def create
   end
 
   def show

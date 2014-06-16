@@ -1,19 +1,8 @@
-<h1>Welcome to Questions Overflow!</h1>
+<h2><%= @title %></h2>
 
-<%= form_for :questions do |f| %>
 
-<div>
-  <%= f.label "Question Title" %>
-  <%= f.text_field :title %>
-</div>
-
-<div>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-</div>
-
-<div>
-  <%= f.submit "Submit your question" %>
-</div>
-
-<% end %>
+<ul>
+  <%= @questions.each do |q| %>
+    <li><%= q %></li>
+  <% end %>
+</ul>
