@@ -28,8 +28,10 @@
   <%= yield %>
 </div>
 
-<div class="footer navbar-fixed-bottom">
-  <%= link_to questions, questions_path %>
+<div class="footer navbar-fixed-bottom" style="padding-bottom: 20px;">
+  <center>
+    <%= link_to "All Questions" , questions_path %> | <%= link_to "Post a Question" , new_question_path %> | Created by Jacinda Zhong | Launch Academy June 2014
+  </center>
 </div>
 
 
