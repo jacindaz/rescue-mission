@@ -16,14 +16,15 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to "/questions/#{@question.id}"
     else
-      flash.now[:notice] = "Your question couldn't be saved. Sorry!"
-      redirect_to '/questions'
+      flash[:notice] = "Your question couldn't be saved. Sorry!"
+      render :new
     end
   end
 
   def show
     @question = Question.find(params[:id])
-    @title = "Question #{@question.title}"
+    @answers = Answer.new
+    @title = "#{@question.title}"
   end
 
   def update

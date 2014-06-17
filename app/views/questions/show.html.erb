@@ -10,3 +10,30 @@
 <p>
   <%= @question.description %>
 </p>
+
+<br><br>
+
+<h3>Answers</h3>
+
+<ul>
+  <% @question.answers.each do |one_answer| %>
+    <li><%= one_answer.description %></li>
+  <% end %>
+</ul>
+
+<h3>Submit an Answer</h3>
+
+<%= form_for [@question, @answers] do |f| %>
+
+  <div>
+    <%= f.label "Your Reponse" %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.submit "Submit your answer" %>
+  </div>
+
+<% end %>
+
+

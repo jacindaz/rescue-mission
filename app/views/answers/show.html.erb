@@ -1,0 +1,12 @@
+<i>
+  <%= @answer.created_at.strftime("%m/%d/%Y") %>
+    &nbsp;&nbsp;&nbsp;
+    <% unless @answer.user_id.nil? %>
+      |&nbsp;&nbsp;&nbsp;
+      <%= @answer.user.username %>
+    <% end %>
+</i>
+
+<p>
+  <%= @answer.description %>
+</p>

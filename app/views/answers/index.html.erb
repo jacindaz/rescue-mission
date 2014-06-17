@@ -1,0 +1,10 @@
+<% @answers.each do |answer| %>
+  <div style="padding: 10px">
+    <i>
+      <%= answer.created_at.strftime("%m/%d/%Y") %>
+    </i>
+    <p><%= answer.description %></p>
+  </div>
+  <hr>
+<% end %>
+
