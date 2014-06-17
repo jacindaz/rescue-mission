@@ -7,23 +7,21 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    binding.pry
+    @title = "Post a Question"
   end
 
   def create
-    binding.pry
     @question = Question.new(question_params)
 
     if @question.save
       redirect_to "/questions/#{@question.id}"
     else
-      flash[:notice] = "Your question couldn't be saved. Sorry!"
+      flash.now[:notice] = "Your question couldn't be saved. Sorry!"
       redirect_to '/questions'
     end
   end
 
   def show
-    binding.pry
     @question = Question.find(params[:id])
     @title = "Question #{@question.title}"
   end

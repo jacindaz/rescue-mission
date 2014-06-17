@@ -8,7 +8,30 @@
 </head>
 <body>
 
-<%= yield %>
+
+<div class="float-left">
+  <h2><%= @title %></h2>
+</div>
+
+<div class="float-right">
+  <h4>
+    <%= link_to "Post a Question", new_question_path %>
+  </h4>
+</div>
+
+<br><br>
+<hr>
+
+
+
+<div class="inner-body">
+  <%= yield %>
+</div>
+
+<div class="footer navbar-fixed-bottom">
+  <%= link_to questions, questions_path %>
+</div>
+
 
 </body>
 </html>

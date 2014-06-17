@@ -1,8 +1,18 @@
-<h2><%= @title %></h2>
 
 
-<ul>
-  <%= @questions.each do |q| %>
-    <li><%= q %></li>
-  <% end %>
-</ul>
+<% @questions.each do |q| %>
+  <div style="padding: 10px">
+    <h4><%= q.title %></h4>
+    <i>
+      <%= q.created_at.strftime("%m/%d/%Y") %>
+      &nbsp;&nbsp;&nbsp;
+      <% unless q.user_id.nil? %>
+        |&nbsp;&nbsp;&nbsp;
+        <%= q.user.username %>
+      <% end %>
+    </i>
+    <p><%= q.description %></p>
+  </div>
+  <hr>
+<% end %>
+

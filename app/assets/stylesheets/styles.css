@@ -1,0 +1,13 @@
+body {
+  margin: 2% 15%;
+}
+
+.inner-body {
+  margin: 0 5%;
+}
+
+.float-right { float:right; }
+.float-left { float:left; }
+
+.align-right { text-align: right; }
+.align-left { text-align: left; }
