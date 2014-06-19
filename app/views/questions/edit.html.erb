@@ -1,6 +1,13 @@
-<h1>Edit your Question</h1>
 
 <%= form_for @question, method: :patch do |f| %>
+
+  <% if @question.errors.any? %>
+    <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
 <div>
   <%= f.label :title %>

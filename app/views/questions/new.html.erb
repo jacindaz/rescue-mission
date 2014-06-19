@@ -1,5 +1,13 @@
 <%= form_for @question do |f| %>
 
+  <% if @question.errors.any? %>
+    <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
 <div>
   <%= f.label "Question Title" %>
   <%= f.text_field :title %>

@@ -34,6 +34,8 @@ class AnswersController < ApplicationController
   def destroy
   end
 
+  private
+
   def answers_params
     params.require(:answer).permit(:description)
   end
